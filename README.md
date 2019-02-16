@@ -7,3 +7,17 @@
    amount coins, they will be able to purchase different characters and even 
    different maps, which include different kinds ways to play snake.
 ```
+
+## Coding language
+```
+   Python
+```
+
+## Sprint
+```
+   Sprint1: Initialize coding environment and tools. Set the time schedule and design the interfaces.
+   
+   Sprint2: Accomplish the functionality of the game which is like traditional snake game.
+   
+   Sprint3: Add more interesting features including collect coins to purchase characters and different maps.
+```
