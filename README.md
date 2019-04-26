@@ -4,12 +4,10 @@
 ```
    This project is about a snake game. Players will collection coins during each time they play.    
 ```
-
 ## Coding language
 ```
    Python
 ```
-
 ## Sprint
 ```
    Sprint1: Initialize coding environment and tools. Set the time schedule and design the interfaces.
@@ -22,8 +20,9 @@
    Press "A" to go left.
    Press "D" to go right.
 ```
-## How to test
+## Command line
 ```
+   Run gamesnake.py to play the game.
    Run pytest tester.py to run unit tests.
 ```
 ## Future features
