@@ -13,9 +13,7 @@
 ## Sprint
 ```
    Sprint1: Initialize coding environment and tools. Set the time schedule and design the interfaces.
-   
    Sprint2: Accomplish the functionality of the game which is like traditional snake game.
-
 ```
 ## How to play
 ```
