@@ -4,22 +4,21 @@ import random
 
 delay = 0.1
 
-# Score
 score = 0
 high_score = 0
 
-# Set up the screen
-wn = turtle.Screen()
-wn.title("Snake Game by @TokyoEdTech")
-wn.bgcolor("green")
-wn.setup(width=600, height=600)
-wn.tracer(0)  # Turns off the screen updates
+# Screen
+w = turtle.Screen()
+w.title("Snake Game")
+w.bgcolor("black")
+w.setup(width=600, height=600)
+w.tracer(0)  # Turns off the screen updates
 
 # Snake head
 head = turtle.Turtle()
 head.speed(0)
-head.shape("square")
-head.color("black")
+head.shape("circle")
+head.color("green")
 head.penup()
 head.goto(0, 0)
 head.direction = "stop"
@@ -28,7 +27,7 @@ head.direction = "stop"
 food = turtle.Turtle()
 food.speed(0)
 food.shape("circle")
-food.color("red")
+food.color("blue")
 food.penup()
 food.goto(0, 100)
 
@@ -42,10 +41,8 @@ pen.color("white")
 pen.penup()
 pen.hideturtle()
 pen.goto(0, 260)
-pen.write("Score: 0  High Score: 0", align="center", font=("Courier", 24, "normal"))
+pen.write("Current Score: 0  Highest Score: 0", align="center", font=("Courier", 24, "normal"))
 
-
-# Functions
 def go_up():
     if head.direction != "down":
         head.direction = "up"
@@ -81,18 +78,18 @@ def move():
 
 
 if __name__ == '__main__':
-    # Keyboard bindings
-    wn.listen()
-    wn.onkeypress(go_up, "w")
-    wn.onkeypress(go_down, "s")
-    wn.onkeypress(go_left, "a")
-    wn.onkeypress(go_right, "d")
+    # Keyboard
+    w.listen()
+    w.onkeypress(go_up, "w")
+    w.onkeypress(go_down, "s")
+    w.onkeypress(go_left, "a")
+    w.onkeypress(go_right, "d")
 
-    # Main game loop
+    # Main game
     while True:
-        wn.update()
+        w.update()
 
-        # Check for a collision with the border
+        # Collision with the border
         if head.xcor() > 290 or head.xcor() < -290 or head.ycor() > 290 or head.ycor() < -290:
             time.sleep(1)
             head.goto(0, 0)
@@ -112,7 +109,7 @@ if __name__ == '__main__':
             delay = 0.1
 
             pen.clear()
-            pen.write("Score: {}  High Score: {}".format(score, high_score), align="center", font=("Courier", 24, "normal"))
+            pen.write("Current Score: {}  Highest Score: {}".format(score, high_score), align="center", font=("Courier", 24, "normal"))
 
             # Check for a collision with the food
         if head.distance(food) < 20:
@@ -125,7 +122,7 @@ if __name__ == '__main__':
             new_segment = turtle.Turtle()
             new_segment.speed(0)
             new_segment.shape("square")
-            new_segment.color("grey")
+            new_segment.color("green")
             new_segment.penup()
             segments.append(new_segment)
 
@@ -133,13 +130,13 @@ if __name__ == '__main__':
             delay -= 0.001
 
             # Increase the score
-            score += 10
+            score += 1
 
             if score > high_score:
                 high_score = score
 
             pen.clear()
-            pen.write("Score: {}  High Score: {}".format(score, high_score), align="center", font=("Courier", 24, "normal"))
+            pen.write("Current Score: {}  Highest Score: {}".format(score, high_score), align="center", font=("Courier", 24, "normal"))
 
             # Move the end segments first in reverse order
         for index in range(len(segments) - 1, 0, -1):
@@ -177,8 +174,8 @@ if __name__ == '__main__':
 
                 # Update the score display
                 pen.clear()
-                pen.write("Score: {}  High Score: {}".format(score, high_score), align="center",
+                pen.write("Current Score: {}  Highest Score: {}".format(score, high_score), align="center",
                           font=("Courier", 24, "normal"))
 
         time.sleep(delay)
-    wn.mainloop()
+    w.mainloop()
