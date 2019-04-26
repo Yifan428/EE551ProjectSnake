@@ -19,6 +19,8 @@
    Press "S" to go down.
    Press "A" to go left.
    Press "D" to go right.
+   If the snake head collide with the wall, game over.
+   If the snake head collide with the snake body, game over.
 ```
 ## Command line
 ```
